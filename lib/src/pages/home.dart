@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pagos_unap/src/bloc/provider_bloc.dart';
 import 'package:pagos_unap/src/pages/tabs/inicio.dart';
+import 'package:pagos_unap/src/pages/tabs/pagos_realizados.dart';
+import 'package:pagos_unap/src/pages/tabs/perfil.dart';
 import 'package:pagos_unap/src/utils/responsive.dart';
 
 class HomePage extends StatefulWidget {
@@ -17,8 +19,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     pageList.add(const InicioPage());
-    pageList.add(Container());
-    pageList.add(Container());
+    pageList.add(const PagosRealizados());
+    pageList.add(const Perfil());
 
     super.initState();
     /* LocalNotificationApi.init(initScheluded: true);

@@ -24,12 +24,10 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
-        children: const [
-          SizedBox.expand(),
+        children: [
+          const SizedBox.expand(),
           Center(
-            child: FlutterLogo(
-              size: 300,
-            ),
+            child: Image.asset('assets/img/logo_unap.png'),
           ),
         ],
       ),

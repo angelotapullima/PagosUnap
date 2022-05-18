@@ -7,6 +7,16 @@ class InicioPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final list = [
+      MetodoModel(nombre: 'Matrícula', icono: 'matricula.svg'),
+      MetodoModel(nombre: 'Matrícula extemporanea', icono: 'extenporaneo.svg'),
+      MetodoModel(nombre: 'Reingreso', icono: 'reingreso.svg'),
+      MetodoModel(nombre: 'REVISION CURRICULAR', icono: 'revision.svg'),
+      MetodoModel(nombre: 'SUSTENTACIÓN DE TESIS', icono: 'titulo.svg'),
+      MetodoModel(nombre: 'PRACTICA PRE-PROFESIONAL', icono: 'practica.svg'),
+      MetodoModel(nombre: 'DUPLICADO CARNET BIBLIOTECA ESPECIALIZADA', icono: 'carnet.svg'),
+      MetodoModel(nombre: 'Más', icono: 'more.svg'),
+    ];
     return Scaffold(
       body: Stack(
         children: [
@@ -68,10 +78,11 @@ class InicioPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: SizedBox(
-                            child: SvgPicture.asset(
-                          'assets/svg/alert.svg',
-                          color: const Color(0xFFEFCD4F),
-                        )),
+                          child: SvgPicture.asset(
+                            'assets/svg/alert.svg',
+                            color: const Color(0xFFEFCD4F),
+                          ),
+                        ),
                       )
                     ],
                   ),
@@ -119,7 +130,7 @@ class InicioPage extends StatelessWidget {
                         child: Row(
                           children: const [
                             Text(
-                              'S/.400.00',
+                              'S/.88.00',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 25,
@@ -129,6 +140,10 @@ class InicioPage extends StatelessWidget {
                             Spacer(),
                             Text(
                               'Ver Detalles ',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                              ),
                             ),
                             Icon(
                               Icons.arrow_forward_ios,
@@ -137,17 +152,92 @@ class InicioPage extends StatelessWidget {
                           ],
                         ),
                       ),
+                      SizedBox(
+                        height: ScreenUtil().setHeight(10),
+                      ),
                       const Divider(
                         thickness: 1.2,
+                      ),
+                      SizedBox(
+                        height: ScreenUtil().setHeight(10),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(15),
+                        ),
+                        child: const Text(
+                          'Consulta la deuda de tu compañero',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(15)),
+                        width: double.infinity,
+                        height: ScreenUtil().setHeight(40),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: Colors.grey,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(
+                              width: ScreenUtil().setWidth(10),
+                            ),
+                            const Text(
+                              'Búscar',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 14,
+                                color: Color.fromARGB(255, 123, 121, 121),
+                              ),
+                            ),
+                            const Spacer(),
+                            const Icon(Icons.search),
+                            SizedBox(
+                              width: ScreenUtil().setWidth(10),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: ScreenUtil().setHeight(15),
+                      ),
+                      const Divider(
+                        thickness: 1.2,
+                      ),
+                      SizedBox(
+                        height: ScreenUtil().setHeight(10),
+                      ),
+                      Container(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: ScreenUtil().setWidth(15),
+                        ),
+                        child: const Text(
+                          'Conceptos de pago',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: ScreenUtil().setHeight(10),
                       ),
                       Expanded(
                         child: GridView.builder(
                           controller: controller,
-                          itemCount: 20,
+                          itemCount: list.length,
                           padding: EdgeInsets.zero,
                           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisSpacing: ScreenUtil().setWidth(10),
-                            childAspectRatio: .75,
+                            childAspectRatio: .8,
                             crossAxisCount: 4,
                             mainAxisSpacing: ScreenUtil().setHeight(2),
                           ),
@@ -163,21 +253,32 @@ class InicioPage extends StatelessWidget {
                                     children: [
                                       Container(
                                         margin: EdgeInsets.symmetric(
-                                          horizontal: ScreenUtil().setWidth(10),
+                                          horizontal: ScreenUtil().setWidth(15),
+                                        ),
+                                        padding: EdgeInsets.symmetric(
+                                          horizontal: ScreenUtil().setWidth(12),
+                                          vertical: ScreenUtil().setHeight(12),
                                         ),
                                         width: constrain.maxWidth,
-                                        height: constrain.maxHeight - (constrain.maxHeight * 0.45),
+                                        height: constrain.maxHeight - (constrain.maxHeight * 0.5),
                                         decoration: BoxDecoration(
                                           borderRadius: BorderRadius.circular(5),
                                           border: Border.all(
                                             color: Colors.grey,
                                           ),
                                         ),
-                                        child: const Icon(Icons.abc),
+                                        child: SizedBox(
+                                          child: SvgPicture.asset(
+                                            'assets/svg/${list[index].icono}',
+                                            color: const Color(0xFF052D07),
+                                          ),
+                                        ),
                                       ),
                                       Text(
-                                        'Item ${index + 1} fjfjf kfkgjk',
+                                        '${list[index].nombre}',
                                         textAlign: TextAlign.center,
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 3,
                                         style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w600,
@@ -201,4 +302,14 @@ class InicioPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class MetodoModel {
+  String? nombre;
+  String? icono;
+
+  MetodoModel({
+    this.nombre,
+    this.icono,
+  });
 }
