@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pagos_unap/src/pages/detail_deuda.dart';
+import 'package:pagos_unap/src/pages/pagar_del_compa.dart';
 
 class InicioPage extends StatelessWidget {
   const InicioPage({Key? key}) : super(key: key);
@@ -128,24 +130,50 @@ class InicioPage extends StatelessWidget {
                           horizontal: ScreenUtil().setWidth(20),
                         ),
                         child: Row(
-                          children: const [
-                            Text(
-                              'S/.88.00',
+                          children: [
+                            const Text(
+                              'S/.66.00',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 25,
                                 color: Colors.redAccent,
                               ),
                             ),
-                            Spacer(),
-                            Text(
-                              'Ver Detalles ',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
+                            const Spacer(),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  PageRouteBuilder(
+                                    pageBuilder: (context, animation, secondaryAnimation) {
+                                      return const DetailDeuda();
+                                    },
+                                    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                      var begin = const Offset(0.0, 1.0);
+                                      var end = Offset.zero;
+                                      var curve = Curves.ease;
+
+                                      var tween = Tween(begin: begin, end: end).chain(
+                                        CurveTween(curve: curve),
+                                      );
+
+                                      return SlideTransition(
+                                        position: animation.drive(tween),
+                                        child: child,
+                                      );
+                                    },
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Ver Detalles ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                ),
                               ),
                             ),
-                            Icon(
+                            const Icon(
                               Icons.arrow_forward_ios,
                               size: 15,
                             )
@@ -174,35 +202,55 @@ class InicioPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Container(
-                        margin: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(15)),
-                        width: double.infinity,
-                        height: ScreenUtil().setHeight(40),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          border: Border.all(
-                            color: Colors.grey,
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            PageRouteBuilder(
+                              opaque: false,
+                              transitionDuration: const Duration(milliseconds: 400),
+                              pageBuilder: (context, animation, secondaryAnimation) {
+                                return const PagarCompa();
+                              },
+                              transitionsBuilder: (context, animation, secondaryAnimation, child) {
+                                return FadeTransition(
+                                  opacity: animation,
+                                  child: child,
+                                );
+                              },
+                            ),
+                          );
+                        },
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(15)),
+                          width: double.infinity,
+                          height: ScreenUtil().setHeight(40),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(8),
+                            border: Border.all(
+                              color: Colors.grey,
+                            ),
                           ),
-                        ),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: ScreenUtil().setWidth(10),
-                            ),
-                            const Text(
-                              'Búscar',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14,
-                                color: Color.fromARGB(255, 123, 121, 121),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                width: ScreenUtil().setWidth(10),
                               ),
-                            ),
-                            const Spacer(),
-                            const Icon(Icons.search),
-                            SizedBox(
-                              width: ScreenUtil().setWidth(10),
-                            )
-                          ],
+                              const Text(
+                                'Búscar',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                  color: Color.fromARGB(255, 123, 121, 121),
+                                ),
+                              ),
+                              const Spacer(),
+                              const Icon(Icons.search),
+                              SizedBox(
+                                width: ScreenUtil().setWidth(10),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                       SizedBox(
