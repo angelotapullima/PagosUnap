@@ -11,6 +11,7 @@ class DetailDeuda extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Stack(
+        fit: StackFit.expand,
         children: [
           SizedBox(
             height: double.infinity,

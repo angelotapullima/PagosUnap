@@ -4,9 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pagos_unap/src/bloc/provider_bloc.dart';
 import 'package:pagos_unap/src/pages/home.dart';
 import 'package:pagos_unap/src/pages/splash.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
     return ProviderBloc(
       child: ScreenUtilInit(
         designSize: const Size(375, 812),
-        builder: (child) => MaterialApp(
-          title: 'Sethi',
+        builder: (children) => MaterialApp(
+          title: 'Unap',
           theme: ThemeData(
             primarySwatch: Colors.blueGrey,
             textTheme: GoogleFonts.poppinsTextTheme(),
@@ -32,6 +33,11 @@ class MyApp extends StatelessWidget {
               child: child!,
             );
           },
+          localizationsDelegates: const [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
           supportedLocales: const [
             Locale('es'),
             Locale('es', 'ES'),

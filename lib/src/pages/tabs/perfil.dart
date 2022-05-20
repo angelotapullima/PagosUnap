@@ -17,6 +17,158 @@ class Perfil extends StatelessWidget {
             height: double.infinity,
             color: Colors.white,
           ),
+          Container(
+            margin: EdgeInsets.only(
+              top: responsive.hp(49),
+            ),
+            height: double.infinity,
+            width: double.infinity,
+            color: Colors.white,
+            child: Column(
+              children: [
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: ScreenUtil().setHeight(18),
+                    horizontal: ScreenUtil().setWidth(10),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/informacion.svg',
+                        width: ScreenUtil().setHeight(22),
+                        height: ScreenUtil().setHeight(22),
+                        color: const Color(0xff0D5332),
+                      ),
+                      SizedBox(
+                        width: ScreenUtil().setWidth(10),
+                      ),
+                      const Text(
+                        'Información Personal',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: ScreenUtil().setHeight(18),
+                    horizontal: ScreenUtil().setWidth(10),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/politica.svg',
+                        width: ScreenUtil().setHeight(22),
+                        height: ScreenUtil().setHeight(22),
+                        color: const Color(0xff0D5332),
+                      ),
+                      SizedBox(
+                        width: ScreenUtil().setWidth(10),
+                      ),
+                      const Text(
+                        'Politicas de Privacidad',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: ScreenUtil().setHeight(18),
+                    horizontal: ScreenUtil().setWidth(10),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/terminos.svg',
+                        width: ScreenUtil().setHeight(22),
+                        height: ScreenUtil().setHeight(22),
+                        color: const Color(0xff0D5332),
+                      ),
+                      SizedBox(
+                        width: ScreenUtil().setWidth(10),
+                      ),
+                      const Text(
+                        'Términos y condiciones',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: ScreenUtil().setHeight(18),
+                    horizontal: ScreenUtil().setWidth(8),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/soporte.svg',
+                        width: ScreenUtil().setHeight(25),
+                        height: ScreenUtil().setHeight(25),
+                        color: const Color(0xff0D5332),
+                      ),
+                      SizedBox(
+                        width: ScreenUtil().setWidth(10),
+                      ),
+                      const Text(
+                        'Soporte',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: ScreenUtil().setHeight(18),
+                    horizontal: ScreenUtil().setWidth(8),
+                  ),
+                  child: Row(
+                    children: [
+                      SvgPicture.asset(
+                        'assets/svg/logout.svg',
+                        width: ScreenUtil().setHeight(25),
+                        height: ScreenUtil().setHeight(25),
+                        color: const Color(0xff0D5332),
+                      ),
+                      SizedBox(
+                        width: ScreenUtil().setWidth(10),
+                      ),
+                      const Text(
+                        'Cerrar Sesión',
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const Spacer(),
+                      const Icon(Icons.arrow_forward_ios),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
           SizedBox(
             height: responsive.hp(50),
             width: double.infinity,
@@ -135,158 +287,6 @@ class Perfil extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(
-              top: responsive.hp(50),
-            ),
-            height: double.infinity,
-            width: double.infinity,
-            color: Colors.white,
-            child: Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: ScreenUtil().setHeight(20),
-                    horizontal: ScreenUtil().setWidth(10),
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/informacion.svg',
-                        width: ScreenUtil().setHeight(25),
-                        height: ScreenUtil().setHeight(25),
-                        color: const Color(0xff0D5332),
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(10),
-                      ),
-                      const Text(
-                        'Información Personal',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: ScreenUtil().setHeight(20),
-                    horizontal: ScreenUtil().setWidth(10),
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/politica.svg',
-                        width: ScreenUtil().setHeight(25),
-                        height: ScreenUtil().setHeight(25),
-                        color: const Color(0xff0D5332),
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(10),
-                      ),
-                      const Text(
-                        'Politicas de Privacidad',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: ScreenUtil().setHeight(20),
-                    horizontal: ScreenUtil().setWidth(10),
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/terminos.svg',
-                        width: ScreenUtil().setHeight(25),
-                        height: ScreenUtil().setHeight(25),
-                        color: const Color(0xff0D5332),
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(10),
-                      ),
-                      const Text(
-                        'Términos y condiciones',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: ScreenUtil().setHeight(20),
-                    horizontal: ScreenUtil().setWidth(10),
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/soporte.svg',
-                        width: ScreenUtil().setHeight(25),
-                        height: ScreenUtil().setHeight(25),
-                        color: const Color(0xff0D5332),
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(10),
-                      ),
-                      const Text(
-                        'Soporte',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    vertical: ScreenUtil().setHeight(20),
-                    horizontal: ScreenUtil().setWidth(10),
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/svg/logout.svg',
-                        width: ScreenUtil().setHeight(25),
-                        height: ScreenUtil().setHeight(25),
-                        color: const Color(0xff0D5332),
-                      ),
-                      SizedBox(
-                        width: ScreenUtil().setWidth(10),
-                      ),
-                      const Text(
-                        'Cerrar Sesión',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Spacer(),
-                      const Icon(Icons.arrow_forward_ios),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          )
         ],
       ),
     );

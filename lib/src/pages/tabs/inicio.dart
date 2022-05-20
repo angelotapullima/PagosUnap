@@ -326,7 +326,7 @@ class InicioPage extends StatelessWidget {
                                         '${list[index].nombre}',
                                         textAlign: TextAlign.center,
                                         overflow: TextOverflow.ellipsis,
-                                        maxLines: 3,
+                                        maxLines: 2,
                                         style: const TextStyle(
                                           fontSize: 12,
                                           fontWeight: FontWeight.w600,
