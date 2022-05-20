@@ -16,42 +16,47 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return ProviderBloc(
-      child: ScreenUtilInit(
-        designSize: const Size(375, 812),
-        builder: (children) => MaterialApp(
-          title: 'Unap',
-          theme: ThemeData(
-            primarySwatch: Colors.blueGrey,
-            textTheme: GoogleFonts.poppinsTextTheme(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (BuildContext context, Widget? chilx) {
+        return ProviderBloc(
+          child: MaterialApp(
+            title: 'Unap',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              useMaterial3: true,
+              primarySwatch: Colors.blueGrey,
+              textTheme: GoogleFonts.poppinsTextTheme(),
+            ),
+            builder: (BuildContext context, Widget? child) {
+              final MediaQueryData data = MediaQuery.of(context);
+              return MediaQuery(
+                data: data.copyWith(textScaleFactor: data.textScaleFactor > 2.0 ? 1.2 : data.textScaleFactor),
+                child: child!,
+              );
+            },
+            localizationsDelegates: const [
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: const [
+              Locale('es'),
+              Locale('es', 'ES'),
+            ],
+            localeResolutionCallback: (Locale? locale, Iterable<Locale> supportedLocales) {
+              return locale;
+            },
+            initialRoute: 'splash',
+            routes: {
+              'splash': (BuildContext context) => const Splash(),
+              'home': (BuildContext context) => const HomePage(),
+            },
           ),
-          debugShowCheckedModeBanner: false,
-          builder: (BuildContext context, Widget? child) {
-            final MediaQueryData data = MediaQuery.of(context);
-            return MediaQuery(
-              data: data.copyWith(textScaleFactor: data.textScaleFactor > 2.0 ? 1.2 : data.textScaleFactor),
-              child: child!,
-            );
-          },
-          localizationsDelegates: const [
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
-          ],
-          supportedLocales: const [
-            Locale('es'),
-            Locale('es', 'ES'),
-          ],
-          localeResolutionCallback: (Locale? locale, Iterable<Locale> supportedLocales) {
-            return locale;
-          },
-          initialRoute: 'splash',
-          routes: {
-            'splash': (BuildContext context) => const Splash(),
-            'home': (BuildContext context) => const HomePage(),
-          },
-        ),
-      ),
+        );
+      },
     );
   }
 }

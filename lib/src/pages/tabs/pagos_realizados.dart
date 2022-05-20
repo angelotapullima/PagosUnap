@@ -143,7 +143,7 @@ class PagosRealizados extends StatelessWidget {
                                               width: ScreenUtil().setWidth(10),
                                             ),
                                             const Text(
-                                              'S/. 88.00',
+                                              'S/. 66.00',
                                               style: TextStyle(
                                                 color: Colors.orange,
                                                 fontWeight: FontWeight.bold,
