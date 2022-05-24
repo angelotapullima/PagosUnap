@@ -16,7 +16,7 @@ class PagoCompletado extends StatelessWidget {
               height: ScreenUtil().setHeight(200),
               child: Center(
                 child: Image.asset(
-                  'assets/img/logo_unap.png',
+                  'assets/img/jardines.png',
                   fit: BoxFit.cover,
                   height: ScreenUtil().setHeight(130),
                 ),

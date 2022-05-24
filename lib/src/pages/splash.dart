@@ -27,7 +27,7 @@ class _SplashState extends State<Splash> {
         children: [
           const SizedBox.expand(),
           Center(
-            child: Image.asset('assets/img/logo_unap.png'),
+            child: Image.asset('assets/img/jardines.png'),
           ),
         ],
       ),

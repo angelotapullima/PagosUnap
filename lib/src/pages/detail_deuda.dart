@@ -48,18 +48,14 @@ class DetailDeuda extends StatelessWidget {
                               height: ScreenUtil().setHeight(20),
                             ),
                             Row(
-                              children: [
-                                const Text(
-                                  'Pago de matrícula ',
+                              children: const [
+                                Text(
+                                  'Pago de Deuda ',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                     fontSize: 19,
                                   ),
-                                ),
-                                SvgPicture.asset(
-                                  'assets/svg/matricula.svg',
-                                  color: const Color(0xFF052D07),
                                 ),
                               ],
                             ),
@@ -76,7 +72,7 @@ class DetailDeuda extends StatelessWidget {
                                   width: ScreenUtil().setHeight(45),
                                   decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
                                   child: SvgPicture.asset(
-                                    'assets/svg/informacion.svg',
+                                    'assets/svg/politica.svg',
                                     color: const Color(0xFF052D07),
                                   ),
                                 ),
@@ -86,8 +82,8 @@ class DetailDeuda extends StatelessWidget {
                                 Expanded(
                                   child: Column(
                                     crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: const [
-                                      Text(
+                                    children: [
+                                      const Text(
                                         'Angelo Tapullima Del Aguila ',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -95,15 +91,33 @@ class DetailDeuda extends StatelessWidget {
                                           fontSize: 13,
                                         ),
                                       ),
-                                      Text(
-                                        'Faculltad de Ingeniería de Sistemas e Informática',
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black,
-                                          fontSize: 13,
-                                        ),
+                                      Row(
+                                        children: const [
+                                          SizedBox(
+                                            child: Text(
+                                              'Dni:',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(' 77356425'),
+                                        ],
                                       ),
-                                      Text(
+                                      Row(
+                                        children: const [
+                                          SizedBox(
+                                            child: Text(
+                                              'Mes:',
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                          ),
+                                          Text(' Mayo'),
+                                        ],
+                                      ),
+                                      const Text(
                                         'Código : 2165286',
                                         style: TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -141,10 +155,13 @@ class DetailDeuda extends StatelessWidget {
                               ],
                             ),
                             const Divider(),
+                            SizedBox(
+                              height: ScreenUtil().setHeight(20),
+                            ),
                             Row(
                               children: const [
                                 Text(
-                                  'Autoseguro',
+                                  'Pago por Sepelio mes de Mayo',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -152,7 +169,7 @@ class DetailDeuda extends StatelessWidget {
                                 ),
                                 Spacer(),
                                 Text(
-                                  'S/.25.00',
+                                  'S/.35.00',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -161,9 +178,9 @@ class DetailDeuda extends StatelessWidget {
                               ],
                             ),
                             SizedBox(
-                              height: ScreenUtil().setHeight(10),
+                              height: ScreenUtil().setHeight(20),
                             ),
-                            Row(
+                            /*  Row(
                               children: const [
                                 Text(
                                   'Matricula normal',
@@ -206,11 +223,11 @@ class DetailDeuda extends StatelessWidget {
                             ),
                             SizedBox(
                               height: ScreenUtil().setHeight(10),
-                            ),
+                            ), */
                             Row(
                               children: const [
                                 Text(
-                                  'FEU',
+                                  'Otros',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
@@ -218,13 +235,16 @@ class DetailDeuda extends StatelessWidget {
                                 ),
                                 Spacer(),
                                 Text(
-                                  'S/.6.00',
+                                  'S/.0.00',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.black,
                                   ),
                                 ),
                               ],
+                            ),
+                            SizedBox(
+                              height: ScreenUtil().setHeight(20),
                             ),
                             const Divider(),
                             Row(
@@ -239,7 +259,7 @@ class DetailDeuda extends StatelessWidget {
                                 ),
                                 Spacer(),
                                 Text(
-                                  'S/.66.00',
+                                  'S/.35.00',
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.red,
@@ -253,7 +273,7 @@ class DetailDeuda extends StatelessWidget {
                             ),
                             SizedBox(
                               height: ScreenUtil().setHeight(100),
-                              child: Image.asset('assets/img/logo_unap.png'),
+                              child: Image.asset('assets/img/jardines.png'),
                             ),
                             SizedBox(
                               height: ScreenUtil().setHeight(40),

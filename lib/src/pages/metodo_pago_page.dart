@@ -278,7 +278,7 @@ class MetodoPagoPage extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      'S/66.00',
+                      'S/35.00',
                       style: TextStyle(
                         fontSize: ScreenUtil().setSp(16),
                         fontWeight: FontWeight.w500,
@@ -327,7 +327,7 @@ class MetodoPagoPage extends StatelessWidget {
                     ),
                     const Spacer(),
                     Text(
-                      'S/66.00',
+                      'S/35.00',
                       style: TextStyle(
                         fontSize: ScreenUtil().setSp(16),
                         fontWeight: FontWeight.w700,
@@ -339,7 +339,7 @@ class MetodoPagoPage extends StatelessWidget {
                 SizedBox(
                   child: Center(
                     child: Image.asset(
-                      'assets/img/logo_unap.png',
+                      'assets/img/jardines.png',
                       fit: BoxFit.cover,
                       height: ScreenUtil().setHeight(80),
                     ),

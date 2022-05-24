@@ -57,15 +57,11 @@ class DetailPayment extends StatelessWidget {
                     height: ScreenUtil().setHeight(10),
                   ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text(
-                        '#45554 ',
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                      const Spacer(),
                       Image.asset(
-                        'assets/img/logo_unap.png',
-                        height: ScreenUtil().setHeight(50),
+                        'assets/img/jardines.png',
+                        height: ScreenUtil().setHeight(120),
                       ),
                     ],
                   ),
@@ -83,7 +79,7 @@ class DetailPayment extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Text(' pago por matrícula'),
+                      const Text(' pago por Sepelio'),
                     ],
                   ),
                   SizedBox(
@@ -94,7 +90,7 @@ class DetailPayment extends StatelessWidget {
                       SizedBox(
                         width: ScreenUtil().setWidth(80),
                         child: const Text(
-                          'Alumno     :  ',
+                          'Nombre     :  ',
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
@@ -166,9 +162,9 @@ class DetailPayment extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: ScreenUtil().setHeight(5),
+                    height: ScreenUtil().setHeight(60),
                   ),
-                  Row(
+                  /*   Row(
                     children: [
                       const Text(
                         'Estado:  ',
@@ -199,11 +195,11 @@ class DetailPayment extends StatelessWidget {
                   ),
                   SizedBox(
                     height: ScreenUtil().setHeight(50),
-                  ),
+                  ), */
                   Row(
                     children: const [
                       Text(
-                        'Autoseguro',
+                        'Pago Sepelio',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -211,7 +207,7 @@ class DetailPayment extends StatelessWidget {
                       ),
                       Spacer(),
                       Text(
-                        'S/.25.00',
+                        'S/.35.00',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -222,7 +218,7 @@ class DetailPayment extends StatelessWidget {
                   SizedBox(
                     height: ScreenUtil().setHeight(20),
                   ),
-                  Row(
+                  /*   Row(
                     children: const [
                       Text(
                         'Matricula normal',
@@ -265,11 +261,11 @@ class DetailPayment extends StatelessWidget {
                   ),
                   SizedBox(
                     height: ScreenUtil().setHeight(20),
-                  ),
+                  ), */
                   Row(
                     children: const [
                       Text(
-                        'FEU',
+                        'Otros',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
@@ -285,6 +281,9 @@ class DetailPayment extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: ScreenUtil().setHeight(60),
+                  ),
                   const Divider(),
                   Row(
                     children: const [
@@ -298,7 +297,7 @@ class DetailPayment extends StatelessWidget {
                       ),
                       Spacer(),
                       Text(
-                        'S/.66.00',
+                        'S/.35.00',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.red,

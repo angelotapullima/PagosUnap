@@ -196,6 +196,7 @@ class Perfil extends StatelessWidget {
                       right: ScreenUtil().setWidth(20),
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -222,7 +223,7 @@ class Perfil extends StatelessWidget {
                           ],
                         ),
                         const Text(
-                          'Facultad De ingeniería de Sistemas e Informática',
+                          'Jardines del Eden, ¡tu mejor opción!',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 15,
@@ -257,7 +258,7 @@ class Perfil extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: Colors.orange,
+                      color: const Color(0xFFE33E1E),
                     ),
                     height: ScreenUtil().setHeight(180),
                   ),
@@ -278,10 +279,10 @@ class Perfil extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: const Color(0xFF069452),
+                      color: const Color(0xFFF6F9F8),
                     ),
                     height: ScreenUtil().setHeight(180),
-                    child: Image.asset('assets/img/logo_unap.png'),
+                    child: Image.asset('assets/img/jardines.png'),
                   ),
                 ),
               ],

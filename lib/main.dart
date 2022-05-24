@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, Widget? chilx) {
         return ProviderBloc(
           child: MaterialApp(
-            title: 'Unap',
+            title: 'Jardines Del Eden',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
               useMaterial3: true,

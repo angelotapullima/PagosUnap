@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pagos_unap/src/pages/detail_deuda.dart';
-import 'package:pagos_unap/src/pages/pagar_del_compa.dart';
 
 class InicioPage extends StatelessWidget {
   const InicioPage({Key? key}) : super(key: key);
@@ -10,14 +9,38 @@ class InicioPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final list = [
-      MetodoModel(nombre: 'Matrícula', icono: 'matricula.svg'),
-      MetodoModel(nombre: 'Matrícula extemporanea', icono: 'extenporaneo.svg'),
-      MetodoModel(nombre: 'Reingreso', icono: 'reingreso.svg'),
-      MetodoModel(nombre: 'REVISION CURRICULAR', icono: 'revision.svg'),
-      MetodoModel(nombre: 'SUSTENTACIÓN DE TESIS', icono: 'titulo.svg'),
-      MetodoModel(nombre: 'PRACTICA PRE-PROFESIONAL', icono: 'practica.svg'),
-      MetodoModel(nombre: 'DUPLICADO CARNET BIBLIOTECA ESPECIALIZADA', icono: 'carnet.svg'),
-      MetodoModel(nombre: 'Más', icono: 'more.svg'),
+      ConceptoMetodo(clase: 'Sepultura ecológica clasica', list: [
+        MetodoModel(nombre: 'Personal', icono: 'politica.svg'),
+        MetodoModel(nombre: 'Doble', icono: 'extenporaneo.svg'),
+        MetodoModel(nombre: 'Triple', icono: 'reingreso.svg'),
+        MetodoModel(nombre: 'Cuádruple', icono: 'revision.svg'),
+        MetodoModel(nombre: 'Quíntuple', icono: 'titulo.svg'),
+        MetodoModel(nombre: 'Ampliación por Contrato', icono: 'practica.svg'),
+      ]),
+      ConceptoMetodo(clase: 'Sepultura ecológica clasica + Sepelio Primera', list: [
+        MetodoModel(nombre: 'Personal', icono: 'politica.svg'),
+        MetodoModel(nombre: 'Doble', icono: 'extenporaneo.svg'),
+        MetodoModel(nombre: 'Triple', icono: 'reingreso.svg'),
+        MetodoModel(nombre: 'Cuádruple', icono: 'revision.svg'),
+        MetodoModel(nombre: 'Quíntuple', icono: 'titulo.svg'),
+        MetodoModel(nombre: 'Ampliación por Contrato', icono: 'practica.svg'),
+      ]),
+      ConceptoMetodo(clase: 'Sepultura ecológica clasica + Sepelio Premiun', list: [
+        MetodoModel(nombre: 'Personal', icono: 'politica.svg'),
+        MetodoModel(nombre: 'Doble', icono: 'extenporaneo.svg'),
+        MetodoModel(nombre: 'Triple', icono: 'reingreso.svg'),
+        MetodoModel(nombre: 'Cuádruple', icono: 'revision.svg'),
+        MetodoModel(nombre: 'Quíntuple', icono: 'titulo.svg'),
+        MetodoModel(nombre: 'Ampliación por Contrato', icono: 'practica.svg'),
+      ]),
+      ConceptoMetodo(clase: 'Sepultura ecológica clasica + Sepelio Especial', list: [
+        MetodoModel(nombre: 'Personal', icono: 'politica.svg'),
+        MetodoModel(nombre: 'Doble', icono: 'extenporaneo.svg'),
+        MetodoModel(nombre: 'Triple', icono: 'reingreso.svg'),
+        MetodoModel(nombre: 'Cuádruple', icono: 'revision.svg'),
+        MetodoModel(nombre: 'Quíntuple', icono: 'titulo.svg'),
+        MetodoModel(nombre: 'Ampliación por Contrato', icono: 'practica.svg'),
+      ]),
     ];
     return Scaffold(
       body: Stack(
@@ -60,7 +83,7 @@ class InicioPage extends StatelessWidget {
                               height: ScreenUtil().setHeight(10),
                             ),
                             const Text(
-                              'Facultad de ingeniería de Sistemas e Informática',
+                              'Jardines del Eden, ¡tu mejor opción!',
                               style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.white,
@@ -132,7 +155,7 @@ class InicioPage extends StatelessWidget {
                         child: Row(
                           children: [
                             const Text(
-                              'S/.66.00',
+                              'S/.35.00',
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 25,
@@ -189,7 +212,7 @@ class InicioPage extends StatelessWidget {
                       SizedBox(
                         height: ScreenUtil().setHeight(10),
                       ),
-                      Container(
+                      /*  Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: ScreenUtil().setWidth(15),
                         ),
@@ -253,16 +276,17 @@ class InicioPage extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      */
+                      /*  SizedBox(
                         height: ScreenUtil().setHeight(15),
                       ),
                       const Divider(
                         thickness: 1.2,
-                      ),
+                      ), */
                       SizedBox(
                         height: ScreenUtil().setHeight(10),
                       ),
-                      Container(
+                      /*  Container(
                         padding: EdgeInsets.symmetric(
                           horizontal: ScreenUtil().setWidth(15),
                         ),
@@ -274,71 +298,102 @@ class InicioPage extends StatelessWidget {
                             color: Colors.black,
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        height: ScreenUtil().setHeight(10),
-                      ),
+                      ), */
                       Expanded(
-                        child: GridView.builder(
-                          controller: controller,
-                          itemCount: list.length,
-                          padding: EdgeInsets.zero,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisSpacing: ScreenUtil().setWidth(10),
-                            childAspectRatio: .8,
-                            crossAxisCount: 4,
-                            mainAxisSpacing: ScreenUtil().setHeight(2),
-                          ),
-                          itemBuilder: (context, index) {
-                            return LayoutBuilder(
-                              builder: (context, constrain) {
-                                return Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: ScreenUtil().setWidth(2),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.symmetric(
-                                          horizontal: ScreenUtil().setWidth(15),
+                        child: ListView.builder(
+                            controller: controller,
+                            padding: EdgeInsets.zero,
+                            itemCount: list.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index3) {
+                              return ListView.builder(
+                                  itemCount: 2,
+                                  padding: EdgeInsets.zero,
+                                  shrinkWrap: true,
+                                  physics: const ClampingScrollPhysics(),
+                                  itemBuilder: (context, index2) {
+                                    if (index2 == 0) {
+                                      return Container(
+                                        padding: EdgeInsets.only(
+                                          left: ScreenUtil().setWidth(15),
+                                          right: ScreenUtil().setWidth(15),
+                                          top: ScreenUtil().setHeight(20),
                                         ),
-                                        padding: EdgeInsets.symmetric(
-                                          horizontal: ScreenUtil().setWidth(12),
-                                          vertical: ScreenUtil().setHeight(12),
-                                        ),
-                                        width: constrain.maxWidth,
-                                        height: constrain.maxHeight - (constrain.maxHeight * 0.5),
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(5),
-                                          border: Border.all(
-                                            color: Colors.grey,
+                                        child: Text(
+                                          '${list[index3].clase}',
+                                          style: const TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 18,
+                                            color: Colors.black,
                                           ),
                                         ),
-                                        child: SizedBox(
-                                          child: SvgPicture.asset(
-                                            'assets/svg/${list[index].icono}',
-                                            color: const Color(0xFF052D07),
-                                          ),
-                                        ),
+                                      );
+                                    }
+                                    index2 = index2 - 1;
+
+                                    return GridView.builder(
+                                      itemCount: list[index3].list!.length,
+                                      shrinkWrap: true,
+                                      physics: const ClampingScrollPhysics(),
+                                      padding: EdgeInsets.zero,
+                                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisSpacing: ScreenUtil().setWidth(10),
+                                        childAspectRatio: 1.05,
+                                        crossAxisCount: 4,
+                                        mainAxisSpacing: ScreenUtil().setHeight(0),
                                       ),
-                                      Text(
-                                        '${list[index].nombre}',
-                                        textAlign: TextAlign.center,
-                                        overflow: TextOverflow.ellipsis,
-                                        maxLines: 2,
-                                        style: const TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                );
-                              },
-                            );
-                          },
-                        ),
+                                      itemBuilder: (context, index) {
+                                        return LayoutBuilder(
+                                          builder: (context, constrain) {
+                                            return Padding(
+                                              padding: EdgeInsets.symmetric(
+                                                horizontal: ScreenUtil().setWidth(2),
+                                              ),
+                                              child: Column(
+                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                children: [
+                                                  Container(
+                                                    margin: EdgeInsets.symmetric(
+                                                      horizontal: ScreenUtil().setWidth(13),
+                                                    ),
+                                                    padding: EdgeInsets.symmetric(
+                                                      horizontal: ScreenUtil().setWidth(10),
+                                                      vertical: ScreenUtil().setHeight(10),
+                                                    ),
+                                                    width: constrain.maxWidth,
+                                                    height: constrain.maxHeight - (constrain.maxHeight * 0.4),
+                                                    decoration: BoxDecoration(
+                                                      borderRadius: BorderRadius.circular(5),
+                                                      border: Border.all(
+                                                        color: Colors.grey,
+                                                      ),
+                                                    ),
+                                                    child: SizedBox(
+                                                      child: SvgPicture.asset(
+                                                        'assets/svg/${list[index3].list![index].icono}',
+                                                        color: const Color(0xFF052D07),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    '${list[index3].list![index].nombre}',
+                                                    textAlign: TextAlign.center,
+                                                    overflow: TextOverflow.ellipsis,
+                                                    maxLines: 2,
+                                                    style: const TextStyle(
+                                                      fontSize: 12,
+                                                      fontWeight: FontWeight.w600,
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            );
+                                          },
+                                        );
+                                      },
+                                    );
+                                  });
+                            }),
                       )
                     ],
                   ),
@@ -350,6 +405,16 @@ class InicioPage extends StatelessWidget {
       ),
     );
   }
+}
+
+class ConceptoMetodo {
+  String? clase;
+  List<MetodoModel>? list;
+
+  ConceptoMetodo({
+    this.clase,
+    this.list,
+  });
 }
 
 class MetodoModel {

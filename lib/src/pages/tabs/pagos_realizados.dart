@@ -115,7 +115,7 @@ class PagosRealizados extends StatelessWidget {
                                     child: Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        const Text('Pago por concepto de matricula'),
+                                        const Text('Pago por concepto de Sepelio'),
                                         Row(
                                           mainAxisAlignment: MainAxisAlignment.start,
                                           children: [
@@ -143,9 +143,9 @@ class PagosRealizados extends StatelessWidget {
                                               width: ScreenUtil().setWidth(10),
                                             ),
                                             const Text(
-                                              'S/. 66.00',
+                                              'S/. 35.00',
                                               style: TextStyle(
-                                                color: Colors.orange,
+                                                color: Color(0xFFE33E1E),
                                                 fontWeight: FontWeight.bold,
                                               ),
                                             ),
